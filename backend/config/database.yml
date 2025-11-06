@@ -1,0 +1,24 @@
+# backend/config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  # BU SATIR EKSİK VEYA HATALI OLABİLİR:
+  database: backend_development
+  username: postgres
+  password: 123
+  template: template0
+
+test:
+  <<: *default
+  # TEST VERİTABANI DA GEREKLİ:
+  database: backend_test
+  
+  username: postgres
+  password: 123
+  template: template0
+  # host: localhost
